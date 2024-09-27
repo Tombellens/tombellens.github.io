@@ -208,24 +208,24 @@ a:hover {
 nav {
   position: sticky;
   top: 0;
-  background-color: #f9f9f9;  /* Subtle light background */
-  padding: 15px 0;            /* Increase padding for better spacing */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  /* Soft shadow for a floating effect */
+  background-color: #f9f9f9; /* Subtle light background */
+  padding: 15px 0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
   z-index: 1000;
   width: 100%;
-  border-bottom: 1px solid #e0e0e0;  /* Light border to define the bar */
+  border-bottom: 1px solid #e0e0e0; /* Light border to define the bar */
 }
 
 nav ul {
-  list-style: none;
+  list-style: none;  /* Remove bullets from the list */
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;   /* Center-align menu */
+  display: flex;  /* This aligns the list items in a row */
+  justify-content: center;  /* Center-align the list items */
 }
 
 nav ul li {
-  margin: 0 20px;            /* Adjust spacing between menu items */
+  margin: 0 20px;  /* Space out the list items */
 }
 
 nav ul li a {
@@ -239,10 +239,9 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  border-bottom: 2px solid #333;  /* Add subtle underline on hover */
+  border-bottom: 2px solid #333;  /* Subtle underline on hover */
   color: #111;  /* Darker color on hover */
 }
-
 /* Ensure header stays proportional */
 header h1 {
   font-size: 3em;
