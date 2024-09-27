@@ -1,0 +1,224 @@
+/* Base Styling */
+body {
+  font-family: 'Helvetica', sans-serif;
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 120px 20px; /* More padding to make it stand out */
+  border-bottom: 1px solid black;
+}
+
+h1 {
+  font-family: 'Georgia', serif;
+  font-size: 3.5em; /* Larger font for the name */
+  margin: 0;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-image img {
+  max-width: 200px;
+  border-radius: 50%;
+}
+
+h4 {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-top: 10px;
+  color: #555; /* Slightly lighter text for the subheading */
+}
+#phd {
+  padding-top: 40px;
+  border-top: 2px solid black;
+}
+
+#phd a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  transition: all 0.3s ease;
+}
+
+#phd a:hover {
+  border-bottom: 2px solid black;
+}
+
+p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  text-align: left;  /* Center-align all paragraphs */
+  display: block;
+}
+h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2.2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  text-align: justify;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2em;
+  padding: 10px 0;
+  border-bottom: 1px solid black;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  transition: border-bottom 0.3s;
+}
+
+a:hover {
+  border-bottom: 2px solid black;
+}
+
+.project {
+  margin-bottom: 50px;
+  padding: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+  font-size: 1.8em;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.project-details {
+  display: none;
+  padding: 20px 0;
+  border-top: 1px solid black;
+  margin-top: 10px;
+}
+
+.image-text {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.image-text img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 1px solid black;
+}
+
+.image-text {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.image-text img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 1px solid black;
+}
+
+.image-text.right {
+  flex-direction: row-reverse;
+}
+
+.image-text.right img {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .image-text {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-text img {
+    margin: 0 auto 20px auto;
+  }
+}
+
+.project-details hr {
+  border: 0;
+  height: 1px;
+  background: black;
+  margin: 20px 0;
+}
+
+/* Style the technical tools in italics */
+.project-details em {
+  display: block;
+  font-style: italic;
+  color: #555;
+  margin-top: 10px;
+}
+
+#education {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+#education h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2.2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.education-item {
+  margin-bottom: 40px;
+}
+
+.education-item h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.education-item p {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.education-item strong {
+  font-weight: bold;
+}

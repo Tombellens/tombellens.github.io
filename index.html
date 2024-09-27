@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - CV</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400&family=Helvetica:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <h1>Tom Bellens</h1>
+        <h4>PhD Student at KU Leuven Public Governance Institute | Master's Student at Master of AI (NLP) KU Leuven</h4>
+    </div>
+</header>
+
+<section id="about">
+    <div class="about-content"></div>
+    <h2>About Me</h2>
+    <p>Hi, I'm Tom Bellens, a PhD candidate in Political Science at the KU Leuven Public Governance Institute, where I'm exploring the career trajectories of Belgian ministerial advisers. My dissertation, set for completion by 2025, focuses on how these advisers navigate their paths to ministerial office.
+
+        In addition, I'm pursuing a Master’s in Artificial Intelligence at KU Leuven, with a specialization in Speech and Language Technologies. Although this may seem unrelated to my PhD at first glance, the AI methodologies are a key complement to my research. By blending the analysis of political career paths with modern text-as-data techniques, I aim to bring new insights into the study of political elites.
+
+        This page serves as a technical CV, showcasing projects that intersect political science and natural language processing (NLP), offering a deeper look into the methods I'm applying to my research and beyond.</p>
+</section>
+
+<section id="phd">
+    <h2>PhD Project</h2>
+    <p>My PhD research centers on ministerial advisers and their career trajectories. These advisers, though unelected, are key political elites working directly for ministers. In the so-called Napoleonic systems of governance (such as France, Italy, Portugal, and Belgium), they hold particularly influential roles. Examining their career paths offers valuable insights into governance, politics, and societal structures.
+
+        Ministerial advisers make up a significant group within the political elite. Between 2000 and 2020 alone, we estimate that at least 3,000 to 4,000 individuals have served in this capacity. On average, each adviser holds 7 to 8 career positions, requiring us to gather and annotate data on between 21,000 and 32,000 career entries. To tackle this, we employ a range of innovative approaches, leveraging both traditional NLP techniques and more modern generative AI methods.
+
+        Ultimately, my PhD project aims to address not only the empirical gaps and theoretical questions surrounding ministerial advisers, but also to advance the broader field of elite background studies through various methodological innovations. You can explore more about my PhD project <a href="phd.html">here.</a></p>
+
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+
+    <div class="project" onclick="toggleProject(1)">
+        <div id="project1-short">
+            <h3>CoRex project </h3>
+            <p>A platform for the collection and annotation of background information on a broad group of political and administrative elites in 52 countries.</p>
+        </div>
+        <div id="project1-details" class="project-details">
+            <h3>CoRex project (COST)</h3>
+            <p>In the context of a COST project called CoRex (), we developed an upgraded version of the lipar-platform. The CoRex
+                project aims to collect background data on political and administrative elites in 52 countries. The scope of this project
+                is extended on many axes compared to the first version. First of all, since this is an international collaboration many people need to work on this so we
+                imoroved the UI and general accesibility of the platform. Secondly, the number of variables has increased by a great number resulting in more time spent per
+                individual. Therefore we added more (AI-aided) tools that should facilitate and speed-up the data collection and annotation process.</p>
+            <p>A first important feature of this platform is an upgrade of the code-suggestions in the lipar platform. Where in lipar we manually trained and
+                deployed the fine-tuned model, the idea here is to make a smart system that decides when to retrain and deploy the fine-tuned models, based on the
+                available data. A second feature is a chat-function, that enables you to "chat" with the data.
+                The first X results of a search-engine query are passed on to a LLM. The LLM simultaneously passes on a message to the user
+                and JSON objects, which can go straight to the dataset. A third important feature is that database
+                updates will be semi-automated, in that sense that our smart scrapers based on earlier sources
+                and decision by the end-user will try to suggest updates to the dataset.</p>
+            <hr>
+            <p><em>Tools: Flask, Python, PostgreSQL, Fine-tuning, BERT, Prompting GPT4</em></p>
+        </div>
+    </div>
+
+    <div class="project" onclick="toggleProject(2)">
+        <div id="project2-short">
+            <h3>Classifier Entropy for Detecting Partisan Content</h3>
+            <p>An experiment using classifier entropy to model the political-neutral axis, detecting partisan content in media articles about Flemish ministerial advisers.</p>
+        </div>
+        <div id="project2-details" class="project-details">
+            <h3>Classifier Entropy for Detecting Partisan Content</h3>
+            <p>This project began by training a BERT-based classifier using a labeled political corpus. The corpus included a wide range of media articles that were annotated based on their political orientation, ranging from highly partisan to politically neutral. This supervised learning approach allowed the model to capture distinct features within the text that signal partisan bias, with the final classifier fine-tuned to identify these characteristics in a structured and consistent way. The model learned to differentiate between politically charged and neutral language, effectively providing a reliable measure of the political leanings of a given text.</p>
+
+            <p>In the second step, we applied the trained classifier to a large corpus of unlabeled media articles specifically related to Flemish ministerial advisers. Instead of using direct classification, the focus was on the entropy of the classifier’s output layer—measuring the uncertainty in the model’s predictions for each article. Higher entropy values indicated more neutral or politically ambiguous content, while lower entropy pointed toward clearer partisan bias. By using entropy-based classification, this method provides a nuanced understanding of how media portray ministerial advisers, offering insight into both explicit political framing and subtler forms of bias.</p>
+            <hr>
+            <p><em>Tools: BERT, Python, TensorFlow, Pandas, Scikit-learn</em></p>
+        </div>
+    </div>
+
+    <div class="project" onclick="toggleProject(3)">
+        <div id="project3-short">
+            <h3>LinkedIn Parser</h3>
+            <p>A platform for the collection and social scientific annotation of LinkedIn CVs.</p>
+        </div>
+        <div id="project3-details" class="project-details">
+            <h3>LinkedIn Parser (lipar)</h3>
+            <p>This project developed the **lipar** platform, which automates the extraction and analysis of career data from LinkedIn profiles. In the first step, we used a web scraper to collect LinkedIn profiles of Flemish ministerial advisers (MAs) from 1999 to 2020, focusing on their educational and career backgrounds. Since LinkedIn does not provide an official API and scraping is restricted, each profile was manually retrieved, and the associated resumes were stored as PDFs. These PDFs were then parsed using PyPDF2 and a custom prompt passed to GPT-4 to structure the data into JSON format. The structured data included job titles, workplaces, start and end dates, and descriptions of the career roles for each adviser.</p>
+
+            <p>In the second phase, we implemented a process for cleaning and coding the collected data. The lipar platform merged career positions from different data sources, such as government records and LinkedIn profiles, to ensure consistency. This step required a combination of manual input and machine learning tools, including a fine-tuned BERT model, to assign labels to each career position. To expedite this process, we utilized a k-nearest neighbors algorithm, followed by a neural network model for classification. The end result was a fully coded dataset that provides a detailed overview of the career paths of Flemish MAs, which can be used for further research in political science and elite studies.</p>
+            <hr>
+            <p><em>Tools: Python, PyPDF2, GPT-4, PostgreSQL, Flask, BERT</em></p>
+        </div>
+    </div>
+        <div class="project" onclick="toggleProject(4)">
+            <div id="project4-short">
+                <h3>ParlTracker</h3>
+                <p>A platform that makes the day-to-day activities in the Belgian Parliament
+                    more accessible to the general public, using a suite of NLP tools.</p>
+            </div>
+            <div id="project4-details" class="project-details">
+                <h3>ParlTracker [IN DEVELOPMENT]</h3>
+                <p> This project is a work in progress and a first proof-of-concept still needs to be finished.
+                    The Belgian Parliament (Chamber of Representatives / Senate) publishes a lot of textual data on their website,
+                    such as full reports on the plenary sessions, commissions and votes. This platform aims to group and synthesize this
+                    information in such a way that the general public can easily learn what their representatives
+                    and political parties actually stand for in the legislature. We rely on a suite of NLP tools (topic-modelling,
+                    question-answering, ..) to make this work.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+
+    <!-- Bachelor's and Master's in History -->
+    <div class="education-item">
+        <h3>Vrije Universiteit Brussel (VUB)</h3>
+        <p><strong>Bachelor's and Master's in History (2020)</strong></p>
+        <p>Master’s thesis on anti-Americanism in postwar Belgium.</p>
+    </div>
+
+    <!-- Master's in AI at KU Leuven -->
+    <div class="education-item">
+        <h3>KU Leuven</h3>
+        <p><strong>Master's in Artificial Intelligence (Expected 2025)</strong></p>
+        <p>Relevant coursework: Machine Learning, NLP, Scripting Languages.</p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>Python (Flask, Pandas, Transformers, Seaborne)</li>
+        <li>HTML/CSS/Typescript (Angular)</li>
+        <li>NLP</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: &#116;&#111;&#109;&#46;&#98;&#101;&#108;&#108;&#101;&#110;&#115;&#64;&#107;&#117;&#108;&#101;&#117;&#118;&#101;&#110;&#46;&#99;&#111;&#109;</p>
+    <p>GitHub: <a href="https://github.com/Tombellens">github.com/Tombellens</a></p>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
