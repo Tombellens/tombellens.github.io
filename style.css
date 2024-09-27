@@ -208,24 +208,26 @@ a:hover {
 nav {
   position: sticky;
   top: 0;
-  background-color: #f9f9f9; /* Subtle light background */
+  background-color: #f9f9f9;
   padding: 15px 0;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 100%;
-  border-bottom: 1px solid #e0e0e0; /* Light border to define the bar */
+  border-bottom: 1px solid #e0e0e0;
+  overflow: hidden;  /* Prevent overflow issues */
 }
 
 nav ul {
-  list-style: none;  /* Remove bullets from the list */
+  list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;  /* This aligns the list items in a row */
-  justify-content: center;  /* Center-align the list items */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;  /* Allow items to wrap on small screens */
 }
 
 nav ul li {
-  margin: 0 20px;  /* Space out the list items */
+  margin: 0 20px;
 }
 
 nav ul li a {
@@ -234,13 +236,29 @@ nav ul li a {
   font-size: 1.1em;
   font-family: 'Georgia', serif;
   padding-bottom: 5px;
-  border-bottom: 2px solid transparent;  /* Remove underline until hover */
-  transition: all 0.3s ease;  /* Smooth hover effect */
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-  border-bottom: 2px solid #333;  /* Subtle underline on hover */
-  color: #111;  /* Darker color on hover */
+  border-bottom: 2px solid #333;
+  color: #111;
+}
+
+/* Media Query for smaller screens (Mobile) */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;  /* Stack items vertically */
+    align-items: center;  /* Center items in the vertical stack */
+  }
+
+  nav ul li {
+    margin: 10px 0;  /* Add vertical spacing between items */
+  }
+
+  nav ul li a {
+    font-size: 1.3em;  /* Increase font size for mobile readability */
+  }
 }
 /* Ensure header stays proportional */
 header h1 {
